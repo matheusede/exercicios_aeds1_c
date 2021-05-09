@@ -22,10 +22,33 @@ void lerMatriz(int n1, int n2, int m[n1] [n2])
     }
 }
 
-//Procedimento para realizar soma entre matrizes.
+//Procedimento para realizar soma entre uma coluna e uma linha de matrizes diferentes.
 void somaMatrizes(int n1, int n2, int n3, int n4, int m1 [n1] [n2], int m2 [n3] [n4])
 {
     int i, j;
     
-     
+    for ( i = 0; i < n1; i++)
+    {
+        for ( j = 0; i < n4; i++)
+        {
+            printf("%d + %d = %d.\n", m1 [i] [0], m2 [0] [j], m1 [i] [0]+ m2 [0] [j]);
+        }
+    }
+}
+
+int main(void)
+{
+    //Declaração de varáveis.
+    int m1 [4] [6], m2 [6] [4], i, j;
+
+    //Leitura dos inputs.
+    printf("Primeira matriz.\n");
+    lerMatriz(4, 6, m1);
+    printf("Segunda matriz.\n");
+    lerMatriz(6, 4, m2);
+
+    //Soma.
+    somaMatrizes(4, 6, 6, 4, m1, m2);
+
+    return 0;
 }
